@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(version: 2019_10_14_193700) do
     t.boolean "permission_status", default: false
     t.integer "user_id"
     t.integer "role_id"
-    t.integer "resource_id"
+    t.integer "action_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id", "role_id", "resource_id"], name: "action_permissions_index"
+    t.index ["user_id", "role_id", "action_id"], name: "action_permissions_index"
   end
 
   create_table "actions", force: :cascade do |t|
